@@ -23,12 +23,17 @@ int print_string(va_list args)
 
     /* If the string is NULL, print "(null)" instead */
     if (str == NULL)
-        str = "(null)";
-    
-    /* Print the string */
-    while (str[count])
     {
-        write(1, &str[count], 1);
+        str = "(null)";
+    }
+
+    /* Print the string */
+    while (str[count] != '\0')
+    {
+        if (write(1, &str[count], 1) == -1)
+        {
+            return (-1); /* Return -1 on write error */
+        }
         count++;
     }
 
