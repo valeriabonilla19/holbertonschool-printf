@@ -38,7 +38,7 @@ RETURN
 -if successful, these functions return the number of characters printed (excluding the null byte).If the null return is unsuccessful, -1 is returned.
 
 REPORTING BUGS
-No detected so far. Please report any to jayvanramos2@gmail.com
+No detected so far. Please report any to jayvanramos23@gmail.com
 
 AUTHORS
 Jayvan Ramos / Valeria Bonilla / Aurelio Pagan
