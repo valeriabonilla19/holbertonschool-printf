@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
     int i = 0, count = 0;
     int (*func)(va_list);
 
-    if (!format)
+    if (!format) /* Prevent segmentation fault */
         return (-1);
 
     va_start(args, format);
@@ -47,4 +47,3 @@ int _printf(const char *format, ...)
     va_end(args);
     return (count);
 }
-
