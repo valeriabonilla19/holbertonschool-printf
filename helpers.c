@@ -4,7 +4,7 @@
  * print_char - Prints a character.
  * @args: The argument list.
  * Return: The number of characters printed (1).
- */
+*/
 int print_char(va_list args)
 {
     char c = va_arg(args, int);
@@ -19,21 +19,21 @@ int print_char(va_list args)
 int print_string(va_list args)
 {
     char *str = va_arg(args, char *);
-    int count = 0;
+    int length = 0;
 
-    /* If the string is NULL, print "(null)" instead */
     if (str == NULL)
         str = "(null)";
 
-    /* Print the string */
-    while (str[count])
-    {
-	write(1, &str[count], 1);
-        count++;
-    }
+    /* Calculate length first */
+    while (str[length])
+        length++;
 
-    return (count);
+    /* Write entire string at once */
+    write(1, str, length);
+
+    return (length);
 }
+
 
 /**
  * print_percent - Prints the percent sign.
