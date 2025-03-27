@@ -12,26 +12,23 @@ int print_char(va_list args)
 }
 
 /**
- * print_string - Prints a string.
+ * print_string - Prints a string (handles NULL).
  * @args: The argument list.
- * Return: The number of characters printed (length of string).
+ * Return: Number of chars printed.
  */
 int print_string(va_list args)
 {
     char *str = va_arg(args, char *);
-    int length = 0;
+    int count = 0;
 
-    if (str == NULL)
+    if (!str)
         str = "(null)";
 
-    /* Calculate length first */
-    while (str[length])
-        length++;
+    while (str[count])
+        count++;
 
-    /* Write entire string at once */
-    write(1, str, length);
-
-    return (length);
+    write(1, str, count);
+    return (count);
 }
 
 
