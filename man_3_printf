@@ -1,0 +1,44 @@
+NAME
+_printf - function that produces output according to a format
+
+SYNOPSIS
+#include "main.h"
+
+int _printf(const char *str, ...)
+void _print_chr(va_list args);
+void _print_num(va_list args);
+void _print_str(va_list args);
+int _putchar(char c);
+void _print_hxs(va_list args);
+void _print_hxl(va_list args);
+void _print_oct(va_list args);
+typedef struct print print_type;
+
+DESCRIPTION
+
+- _printf() function produces output according to the format. It uses a specific function according to receipt format in order to display the result in the correct format.
+
+The available convertion specifiers are:
+
+%c: Prints a single character.
+
+%s: Prints a string of characters.
+
+%d: Prints integers.
+
+%i: Prints integers.
+
+%o: Prints an integer with leading zeros.
+
+%%: Prints a literal percent sign (`%`).
+
+%x: Prints the hexadecial representation of an unsigned decimal in uppercase letters.
+
+RETURN
+-if successful, these functions return the number of characters printed (excluding the null byte).If the null return is unsuccessful, -1 is returned.
+
+REPORTING BUGS
+No detected so far. Please report any to jayvanramos23@gmail.com
+
+AUTHORS
+Jayvan Ramos / Valeria Bonilla / Aurelio Pagan
