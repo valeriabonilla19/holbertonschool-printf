@@ -26,5 +26,5 @@ program and call the function as follows:
 
 # Authors
 - [Jayvan Ramos](https://github.com/Jayvan23)
-- [Valeria Bonilla](https://github.com/valeriabonilla1)
+- [Valeria Bonilla](https://github.com/valeriabonilla19)
 - [Aurelio Pagan](https://github.com/aureliopagan)
