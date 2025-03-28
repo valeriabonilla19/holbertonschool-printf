@@ -20,9 +20,6 @@ program and call the function as follows:
 - %s: Prints a string of characters
 - %d: Prints an integer
 - %i: Prints an integer
-- %x: Prints hexadecimal number format
-- %X: Prints hexadecimal number format
-- %o: Prints octal number format
 
 # Authors
 - [Jayvan Ramos](https://github.com/Jayvan23)
