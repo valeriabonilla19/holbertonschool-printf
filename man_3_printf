@@ -24,12 +24,6 @@ The available convertion specifiers are:
 
 %i: Prints integers.
 
-%o: Prints an integer with leading zeros.
-
-%%: Prints a literal percent sign (`%`).
-
-%x: Prints the hexadecial representation of an unsigned decimal in uppercase letters.
-
 RETURN
 -if successful, these functions return the number of characters printed (excluding the null byte).If the null return is unsuccessful, -1 is returned.
 
@@ -38,4 +32,3 @@ No detected so far. Please report any to jayvanramos2@gmail.com
 
 AUTHORS
 Jayvan Ramos / Valeria Bonilla / Aurelio Pagan
-
