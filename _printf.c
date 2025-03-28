@@ -24,6 +24,8 @@ else if (format[i] == 's')
 func = print_string;
 else if (format[i] == '%')
 func = print_percent;
+else if (format[i] == 'd' || format[i] == 'i')  /* Handle %d and %i */
+func = print_integer;
 else
 func = NULL;
 
@@ -42,4 +44,3 @@ i++;
 va_end(args);
 return (count);
 }
-
