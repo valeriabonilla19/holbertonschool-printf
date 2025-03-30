@@ -7,87 +7,61 @@
 */
 int print_char(va_list args)
 {
-    char c = va_arg(args, int);
-    return (write(1, &c, 1));
+char c = va_arg(args, int);
+return (write(1, &c, 1));
 }
 
 /**
- * print_string - Prints a string (handles NULL).
- * @args: The argument list.
- * Return: Number of chars printed.
- */
+* print_string - Prints a string.
+* @args: The argument list.
+* Return: The number of characters printed (length of string).
+*/
 int print_string(va_list args)
 {
-    char *str = va_arg(args, char *);
-    int count = 0;
-
-    if (!str)
-        str = "(null)";
-
-    while (str[count])
-        count++;
-
-    write(1, str, count);
-    return (count);
+char *str = va_arg(args, char *);
+int count = 0;
+if (str == NULL)
+str = "(null)";
+while (str[count])
+{
+write(1, &str[count], 1);
+count++;
 }
-
-
+return (count);
+}
 /**
- * print_percent - Prints the percent sign.
- * @args: The argument list.
- * Return: The number of characters printed (1).
- */
+* print_percent - Prints the percent sign.
+* @args: The argument list.
+* Return: The number of characters printed (1).
+*/
 int print_percent(va_list args)
 {
-    (void)args;  /* Unused argument */
-    return (write(1, "%", 1));
+(void)args;
+return (write(1, "%", 1));
 }
-
-
 /**
- * print_integer - Prints an integer.
- * @args: The argument list.
- * Return: The number of characters printed.
- */
+* print_integer - Prints an integer.
+* @args: The argument list.
+* Return: The number of characters printed.
+*/
 int print_integer(va_list args)
 {
-    int num;  /* Variable to store the integer */
-    int count = 0;  /* To count the number of characters printed */
-    char buffer[10];  /* Buffer to store digits of the number */
-    int i = 0;  /* Index for the buffer */
-    int j;  /* Loop variable for reversing the digits */
-
-    num = va_arg(args, int);  /* Get the integer argument */
-
-    /* Handle the case when the number is zero */
-    if (num == 0)
-    {
-        return write(1, "0", 1);
-    }
-
-    /* Handle negative numbers */
-    if (num < 0)
-    {
-        write(1, "-", 1);
-        num = -num;
-        count++;
-    }
-
-    /* Convert the integer to a string (store in reverse order) */
-    while (num > 0)
-    {
-        buffer[i] = (num % 10) + '0';
-        num = num / 10;
-        i++;
-    }
-
-    /* Print the digits in correct order (reverse the string) */
-    for (j = i - 1; j >= 0; j--)
-    {
-        write(1, &buffer[j], 1);
-        count++;
-    }
-
-    return count;
+int num = va_arg(args, int);
+int count = 0;
+char buffer[12];
+int i = 0;
+if (num == -2147483648)
+return (write(1, "-2147483648", 11));
+if (num < 0)
+{
+count += write(1, "-", 1);
+num = -num;
 }
-
+do {
+buffer[i++] = (num % 10) + '0';
+num /= 10;
+} while (num > 0);
+while (i--)
+count += write(1, &buffer[i], 1);
+return (count);
+}
