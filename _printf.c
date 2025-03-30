@@ -28,7 +28,6 @@ else if (format[i] == 'd' || format[i] == 'i')
 func = print_integer;
 else
 func = NULL;
-
 if (func)
 count += func(args);
 else
@@ -44,4 +43,3 @@ i++;
 va_end(args);
 return (count);
 }
-
