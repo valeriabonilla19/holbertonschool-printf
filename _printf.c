@@ -24,13 +24,15 @@ else if (format[i] == 's')
 func = print_string;
 else if (format[i] == '%')
 func = print_percent;
+else if (format[i] == 'd' || format[i] == 'i')
+func = print_integer;
 else
 func = NULL;
 
 if (func)
 count += func(args);
 else
-count += write(1, &format[i - 1], 1);
+count += write(1, &format[i - 1], 2);
 }
 else
 {
