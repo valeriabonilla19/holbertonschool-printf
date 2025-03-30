@@ -26,6 +26,8 @@ else if (format[i] == '%')
 func = print_percent;
 else if (format[i] == 'd' || format[i] == 'i')
 func = print_integer;
+else if (format[i] == 'b')
+func = print_binary;
 else
 func = NULL;
 if (func)
